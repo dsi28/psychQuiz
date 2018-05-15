@@ -4,17 +4,32 @@ import java.util.HashMap;
 
 public class Question {
     private int num;
-    private String ans;
+    //private String ans;
     private String optionPicked;
     private String option1;
     private String option2;
     private String option3;
     private String questionText;
+    public HashMap<Integer, Character> ansKey= new HashMap<>();
+    public HashMap<Integer,Integer> score= new HashMap<>(); // 1 for correct, 0 for incorrect.
 
+    public  Question(){
+        setAnsKey();
+    }
 
-    public Question(Integer qNum, Character qAns){
-        num= qNum;
-        ans=qAns.toString();
+    private void setAnsKey(){
+        ansKey.put(1,'b');
+        ansKey.put(2,'a');
+        ansKey.put(3,'c');
+        ansKey.put(4,'a');
+        ansKey.put(5,'c');
+        ansKey.put(6,'c');
+        ansKey.put(7,'b');
+    }
+
+    public void setQuestion(int currentQuestionNumber){
+        num=currentQuestionNumber;
+
     }
 
     public String getOption1(){
@@ -44,9 +59,9 @@ public class Question {
         this.questionText=questionText;
     }
 
-    public String getAns() {
-        return ans;
-    }
+//    public String getAns() {
+//        return ans;
+//    }
 
     public int getNum() {
         return num;
