@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class Question {
     private int num;
-    //private String ans;
     private String optionPicked;
     private String option1;
     private String option2;
@@ -27,9 +26,23 @@ public class Question {
         ansKey.put(7,'b');
     }
 
-    public void setQuestion(int currentQuestionNumber){
+    public void checkChoice(int currentQuestionNumber){
         num=currentQuestionNumber;
-
+        if(optionPicked.equals(ansKey.get(num).toString())){
+            score.put(num, 1);
+        }else{
+            score.put(num,0);
+        }
+    }
+    
+    public int calculateScore(int numberOfQuestions){
+        double temp=0;
+        for (Integer i: score.keySet()) {
+            if(score.get(i)==1){
+                temp++;
+            }
+        }
+        return (int)((temp/numberOfQuestions)*100);
     }
 
     public String getOption1(){
@@ -59,10 +72,6 @@ public class Question {
         this.questionText=questionText;
     }
 
-//    public String getAns() {
-//        return ans;
-//    }
-
     public int getNum() {
         return num;
     }
@@ -74,4 +83,5 @@ public class Question {
     public void setOptionPicked(String optionPicked) {
         this.optionPicked = optionPicked;
     }
+    
 }
