@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Results"
-    android:background="@color/colorAccent">
+    >
 
     <ImageView
         android:id="@+id/picCup"
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:textColor="@color/primary_light"
+        android:textColor="@color/colorAccent"
         android:textStyle="bold"
         android:layout_margin="@dimen/defaultSpacing"
 
@@ -35,11 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/picCup"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/icons"
+        android:textColor="@color/colorAccent"
         android:layout_marginTop="@dimen/defaultSpacing"
-
         android:textSize="@dimen/questionTextSize"
-        android:text="@string/scoreMessage"/>
+        android:text="@string/scoreMessage"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/scoreText"
@@ -47,9 +47,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/scoreHeading"
         android:layout_marginTop="@dimen/defaultSpacing"
-        android:textColor="@color/icons"
+        android:textColor="@color/colorAccent"
         android:textSize="@dimen/questionNumberTextSize"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
 
 
     <TextView
@@ -59,11 +60,11 @@
         android:layout_alignParentBottom="true"
         android:layout_below="@id/scoreText"
         android:gravity="center"
-        android:textColor="@color/icons"
+        android:textColor="@color/colorAccent"
         android:layout_marginBottom="@dimen/defaultSpacing"
-
+        android:textStyle="bold"
         android:textSize="@dimen/questionTextSize"
-        android:text=""/>
+        android:text="@string/thanksMessage"/>
 
 
 

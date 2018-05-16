@@ -32,10 +32,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="@dimen/questionNumberTopSpacing"
-                android:textColor="@color/icons"
+                android:layout_centerInParent="true"
+                android:textColor="#fff"
+                android:layout_marginTop="22dp"
                 android:textSize="@dimen/questionNumberTextSize"
+                android:text="1"
                 android:textStyle="bold"/>
 
         </RelativeLayout>
@@ -48,6 +49,7 @@
             android:gravity="center"
             android:layout_centerInParent="true"
             android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:textSize="@dimen/questionTextSize"
             android:layout_marginTop="@dimen/defaultSpacing"
             android:layout_marginRight="@dimen/defaultSpacing"
@@ -66,7 +68,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/optionTextSize"
-                android:layout_margin="@dimen/defaultSpacing"/>
+                android:layout_margin="@dimen/defaultSpacing"
+                android:textStyle="bold"/>
             <RadioButton
                 android:id="@+id/b"
                 android:layout_width="wrap_content"
@@ -75,7 +78,8 @@
                 android:layout_marginLeft="@dimen/defaultSpacing"
                 android:layout_marginRight="@dimen/defaultSpacing"
                 android:layout_marginBottom="@dimen/defaultSpacing"
-                android:textSize="@dimen/optionTextSize"/>
+                android:textSize="@dimen/optionTextSize"
+                android:textStyle="bold"/>
 
             <RadioButton
                 android:id="@+id/c"
@@ -85,7 +89,8 @@
                 android:layout_marginLeft="@dimen/defaultSpacing"
                 android:layout_marginRight="@dimen/defaultSpacing"
                 android:layout_marginBottom="@dimen/defaultSpacing"
-                android:textSize="@dimen/optionTextSize"/>
+                android:textSize="@dimen/optionTextSize"
+                android:textStyle="bold"/>
         </RadioGroup>
 
         <Button
@@ -93,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/radio"
             android:backgroundTint="@color/colorPrimary"
             android:layout_marginTop="@dimen/defaultSpacing"
             android:layout_marginBottom="@dimen/defaultSpacing"
