@@ -1,103 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/title"
+
+    <ImageView
+        android:id="@+id/psychTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="22dp"
-        android:textSize="32sp"
-        android:text="Quiz"/>
+        android:src="@drawable/psych"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:layout_marginRight="@dimen/defaultSpacing"
+        android:layout_marginLeft="@dimen/defaultSpacing"
+        android:layout_marginTop="@dimen/mediumSpaceing"/>
 
     <TextView
-        android:id="@+id/curNum"
+        android:layout_below="@id/btnStartQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:id="@+id/mainHeading"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
 
-        android:layout_marginBottom="22dp"
-        android:text="1"
-        android:textSize="99sp"
-        android:textStyle="bold
-"
-        />
-
-    <TextView
-        android:id="@+id/questionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:layout_below="@id/curNum"
-        android:gravity="center"
-        
-        android:textSize="22sp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-
-        android:text="This is the question that will take up around this much space on the screen so lets see what ahppens?"/>
-    <RadioGroup
-        android:id="@+id/radio"
-        android:layout_below="@id/questionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp">
-
-        <RadioButton
-            android:id="@+id/a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:textSize="17dp"
-            android:layout_margin="16dp"
-            android:text="This is the first option"/>
-        <RadioButton
-            android:id="@+id/b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="17dp"
-            android:text="This is the second option!"
-
-            />
-
-        <RadioButton
-            android:id="@+id/c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="17dp"
-            android:text="This is the third option*"
-            />
-    </RadioGroup>
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/mediumSpaceing"
+        android:layout_marginLeft="@dimen/defaultSpacing"
+        android:layout_marginRight="@dimen/defaultSpacing"
+        android:textSize="@dimen/headingTextSize"
+        android:text="@string/beginMessage"/>
 
     <Button
-        android:id="@+id/btnSubmit"
+        android:id="@+id/btnStartQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/radio"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/btnBegin"/>
 
-        android:layout_marginTop="16dp"
-        android:text="Submit"/>
-    
 </RelativeLayout>
-    
-
-</ScrollView>

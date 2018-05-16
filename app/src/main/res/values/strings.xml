@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="q1">What is the name of Gus’ car?</string>
+    <string name="q1o1">The Batmobile</string>
+    <string name="q1o2">The Blueberry</string>
+    <string name="q1o3">The Box</string>
+    <string name="q2">How many seasons did Psych have on TV?</string>
+    <string name="q2o1">8</string>
+    <string name="q2o2">1</string>
+    <string name="q2o3">6</string>
+    <string name="q3">Which character is constantly given different nicknames during the series?</string>
+    <string name="q3o1">Woody</string>
+    <string name="q3o2">Juliet</string>
+    <string name="q3o3">Gus</string>
+    <string name="q4">What is Shawn’s secret?</string>
+    <string name="q4o1">He is not a psychic</string>
+    <string name="q4o2">He wants to leave town</string>
+    <string name="q4o3">He has no secret</string>
+    <string name="q5">In what city is the show located?</string>
+    <string name="q5o1">San Diego</string>
+    <string name="q5o2">San Francisco</string>
+    <string name="q5o3">Santa Monica</string>
+    <string name="q6">Who mentored Shawn?</string>
+    <string name="q6o1">Gus</string>
+    <string name="q6o2">Juliet</string>
+    <string name="q6o3">Henry</string>
+    <string name="q7">Who is “Lassie” for most of the show?</string>
+    <string name="q7o1">A dog</string>
+    <string name="q7o2">The head detective</string>
+    <string name="q7o3">The villan</string>
+    <string name="btnBegin">start</string>
+    <string name="beginMessage">Click The Button To Begin</string>
+    <string name="btnSubmit">submit</string>
+    <string name="completeMessage">The Quiz is complete!</string>
+    <string name="scoreMessage">You scored:</string>
+    <string name="thanksMessage">Thanks for playing</string>
 </resources>

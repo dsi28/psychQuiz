@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="defaultSpacing">16dp</dimen>
+    <dimen name="mediumSpaceing">44dp</dimen>
+    <dimen name="questionNumberTopSpacing">88dp</dimen>
+    <dimen name="headingTextSize">33sp</dimen>
+    <dimen name ="questionNumberTextSize">99sp</dimen>
+    <dimen name="questionTextSize">22sp</dimen>
+    <dimen name="optionTextSize">17sp</dimen>
+</resources>

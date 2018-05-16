@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Quiz">
+    tools:context=".Quiz"
+    android:fillViewport="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:layout_above="@id/questionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/pineapple"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/defaultSpacing"
+                android:layout_marginBottom="@dimen/defaultSpacing"
+                android:rotation="45"/>
+
+            <TextView
+                android:id="@+id/curNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/questionNumberTopSpacing"
+                android:textColor="@color/icons"
+                android:textSize="@dimen/questionNumberTextSize"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/questionTextSize"
+            android:layout_marginTop="@dimen/defaultSpacing"
+            android:layout_marginRight="@dimen/defaultSpacing"
+            android:layout_marginLeft="@dimen/defaultSpacing"/>
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_below="@id/questionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/defaultSpacing"
+            android:layout_marginStart="@dimen/defaultSpacing">
+
+            <RadioButton
+                android:id="@+id/a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/optionTextSize"
+                android:layout_margin="@dimen/defaultSpacing"/>
+            <RadioButton
+                android:id="@+id/b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="@dimen/defaultSpacing"
+                android:layout_marginRight="@dimen/defaultSpacing"
+                android:layout_marginBottom="@dimen/defaultSpacing"
+                android:textSize="@dimen/optionTextSize"/>
+
+            <RadioButton
+                android:id="@+id/c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="@dimen/defaultSpacing"
+                android:layout_marginRight="@dimen/defaultSpacing"
+                android:layout_marginBottom="@dimen/defaultSpacing"
+                android:textSize="@dimen/optionTextSize"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginTop="@dimen/defaultSpacing"
+            android:layout_marginBottom="@dimen/defaultSpacing"
+            android:text="@string/btnSubmit"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>
