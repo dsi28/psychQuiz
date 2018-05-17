@@ -4,40 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Quiz"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context="com.example.android.quiz.Quiz">
+
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:layout_above="@id/questionText"
+            android:id="@+id/pineappleNumber"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/defaultSpacing">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/pineapple"
                 android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
-                android:layout_marginTop="@dimen/defaultSpacing"
-                android:layout_marginBottom="@dimen/defaultSpacing"
-                android:rotation="45"/>
+                android:padding="@dimen/mediumSpaceing"
+                android:rotation="45"
+                android:scaleType="centerInside"
+                android:src="@drawable/pineapple" />
 
             <TextView
                 android:id="@+id/curNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:gravity="center"
                 android:layout_centerInParent="true"
-                android:textColor="#fff"
-                android:layout_marginTop="22dp"
-                android:textSize="@dimen/questionNumberTextSize"
+                android:gravity="center"
+                android:paddingTop="@dimen/defaultSpacing"
                 android:text="1"
-                android:textStyle="bold"/>
+                android:textColor="#fff"
+                android:textSize="@dimen/questionNumberTextSize"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -46,19 +49,21 @@
             android:id="@+id/questionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_below="@id/pineappleNumber"
             android:layout_centerInParent="true"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold"
-            android:textSize="@dimen/questionTextSize"
-            android:layout_marginTop="@dimen/defaultSpacing"
+            android:layout_marginLeft="@dimen/defaultSpacing"
             android:layout_marginRight="@dimen/defaultSpacing"
-            android:layout_marginLeft="@dimen/defaultSpacing"/>
+            android:layout_marginTop="@dimen/defaultSpacing"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/questionTextSize"
+            android:textStyle="bold" />
+
         <RadioGroup
             android:id="@+id/radio"
-            android:layout_below="@id/questionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/questionText"
             android:layout_marginLeft="@dimen/defaultSpacing"
             android:layout_marginStart="@dimen/defaultSpacing">
 
@@ -66,43 +71,44 @@
                 android:id="@+id/a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/defaultSpacing"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/optionTextSize"
-                android:layout_margin="@dimen/defaultSpacing"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <RadioButton
                 android:id="@+id/b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="@dimen/defaultSpacing"
                 android:layout_marginLeft="@dimen/defaultSpacing"
                 android:layout_marginRight="@dimen/defaultSpacing"
-                android:layout_marginBottom="@dimen/defaultSpacing"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/optionTextSize"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="@dimen/defaultSpacing"
                 android:layout_marginLeft="@dimen/defaultSpacing"
                 android:layout_marginRight="@dimen/defaultSpacing"
-                android:layout_marginBottom="@dimen/defaultSpacing"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/optionTextSize"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </RadioGroup>
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/radio"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginTop="@dimen/defaultSpacing"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/defaultSpacing"
-            android:text="@string/btnSubmit"/>
+            android:layout_marginTop="@dimen/defaultSpacing"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/btnSubmit" />
 
     </RelativeLayout>
 
