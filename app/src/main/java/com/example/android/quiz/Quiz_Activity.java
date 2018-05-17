@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class Quiz extends AppCompatActivity {
+public class Quiz_Activity extends AppCompatActivity {
     public final int numQuestions=7;
     public int curQuestion=1;
     Question quiz = new Question();
@@ -38,7 +38,7 @@ public class Quiz extends AppCompatActivity {
                     curQuestion++;
                     if(curQuestion==8){
                         int score=quiz.calculateScore(numQuestions);
-                        Intent result= new Intent(Quiz.this, Results.class);
+                        Intent result= new Intent(Quiz_Activity.this, Results_Activity.class);
                         result.putExtra("score", score);
                         startActivity(result);
                     }else{
