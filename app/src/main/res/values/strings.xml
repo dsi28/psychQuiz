@@ -8,10 +8,10 @@
     <string name="q2o1">8</string>
     <string name="q2o2">1</string>
     <string name="q2o3">6</string>
-    <string name="q3">Which character is constantly given different nicknames during the series?</string>
-    <string name="q3o1">Woody</string>
-    <string name="q3o2">Juliet</string>
-    <string name="q3o3">Gus</string>
+    <string name="q3">Select all of Gus\' nicknames from the following list: </string>
+    <string name="q3o1">Ghee Buttersnaps</string>
+    <string name="q3o2">Magic Head</string>
+    <string name="q3o3">Bruton Gaster</string>
     <string name="q4">What is Shawn’s secret?</string>
     <string name="q4o1">He is not a psychic</string>
     <string name="q4o2">He wants to leave town</string>

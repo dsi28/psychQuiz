@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <ImageView
         android:id="@+id/psychTitle"
         android:layout_width="wrap_content"
@@ -17,7 +16,6 @@
         android:layout_marginRight="@dimen/defaultSpacing"
         android:layout_marginLeft="@dimen/defaultSpacing"
         android:layout_marginTop="@dimen/mediumSpaceing"/>
-
     <TextView
         android:layout_below="@id/btnStartQuiz"
         android:layout_width="wrap_content"
@@ -26,14 +24,12 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:gravity="center"
-
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="@dimen/mediumSpaceing"
         android:layout_marginLeft="@dimen/defaultSpacing"
         android:layout_marginRight="@dimen/defaultSpacing"
         android:textSize="@dimen/headingTextSize"
         android:text="@string/beginMessage"/>
-
     <Button
         android:id="@+id/btnStartQuiz"
         android:layout_width="wrap_content"
@@ -41,5 +37,4 @@
         android:layout_centerInParent="true"
         android:backgroundTint="@color/colorPrimary"
         android:text="@string/btnBegin"/>
-
 </RelativeLayout>

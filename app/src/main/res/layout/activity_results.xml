@@ -6,11 +6,9 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".Results_Activity">
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
         <ImageView
             android:id="@+id/picCup"
             android:layout_width="wrap_content"
@@ -18,8 +16,6 @@
             android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:src="@drawable/cup" />
-
-
         <TextView
             android:id="@+id/completeQuizTitle"
             android:layout_width="wrap_content"
@@ -30,10 +26,8 @@
             android:gravity="center"
             android:text="@string/completeMessage"
             android:textColor="@color/colorAccent"
-
             android:textSize="@dimen/headingTextSize"
             android:textStyle="bold" />
-
         <TextView
             android:id="@+id/scoreHeading"
             android:layout_width="wrap_content"
@@ -45,7 +39,6 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/questionTextSize"
             android:textStyle="bold" />
-
         <TextView
             android:id="@+id/scoreText"
             android:layout_width="wrap_content"
@@ -56,8 +49,6 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/questionNumberTextSize"
             android:textStyle="bold" />
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,7 +61,5 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/questionTextSize"
             android:textStyle="bold" />
-
     </RelativeLayout>
-
 </ScrollView>

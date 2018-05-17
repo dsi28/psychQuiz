@@ -2,6 +2,7 @@
 <resources>
 
     <dimen name="defaultSpacing">16dp</dimen>
+    <dimen name="defeultSpacing2x">32dp</dimen>
     <dimen name="mediumSpaceing">44dp</dimen>
     <dimen name="questionNumberTopSpacing">88dp</dimen>
     <dimen name="headingTextSize">33sp</dimen>
