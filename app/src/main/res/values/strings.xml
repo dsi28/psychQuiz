@@ -34,4 +34,5 @@
     <string name="completeMessage">The Quiz is complete!</string>
     <string name="scoreMessage">You scored:</string>
     <string name="thanksMessage">Thanks for playing</string>
+    <string name="textBoxEnterText">Answer</string>
 </resources>

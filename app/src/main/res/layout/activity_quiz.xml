@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:id="@+id/QuizActivityScroll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,7 +35,7 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/defaultSpacing"
                 android:text="1"
-                android:textColor="#fff"
+                android:textColor="@color/numberColor"
                 android:textSize="@dimen/questionNumberTextSize"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -58,7 +60,7 @@
             android:layout_marginLeft="@dimen/defaultSpacing"
             android:layout_marginStart="@dimen/defaultSpacing">
             <RadioButton
-                android:id="@+id/a"
+                android:id="@+id/rb_a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/defaultSpacing"
@@ -66,7 +68,7 @@
                 android:textSize="@dimen/optionTextSize"
                 android:textStyle="bold" />
             <RadioButton
-                android:id="@+id/b"
+                android:id="@+id/rb_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/defaultSpacing"
@@ -76,7 +78,7 @@
                 android:textSize="@dimen/optionTextSize"
                 android:textStyle="bold" />
             <RadioButton
-                android:id="@+id/c"
+                android:id="@+id/rb_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/defaultSpacing"
@@ -86,10 +88,25 @@
                 android:textSize="@dimen/optionTextSize"
                 android:textStyle="bold" />
         </RadioGroup>
+        <EditText
+            android:id="@+id/editTextBoxOption"
+            android:layout_below="@id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediumSpaceing"
+            android:layout_marginStart="@dimen/mediumSpaceing"
+            android:layout_marginRight="@dimen/mediumSpaceing"
+            android:layout_marginEnd="@dimen/mediumSpaceing"
+            android:layout_marginTop="@dimen/defaultSpacing"
+            android:inputType="text"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/textBoxEnterText"/>
         <CheckBox
-            android:id="@+id/ca"
+            android:id="@+id/cb_a"
             android:layout_below="@id/questionText"
             android:layout_marginLeft="@dimen/defeultSpacing2x"
+            android:layout_marginStart="@dimen/defeultSpacing2x"
             android:layout_marginTop="@dimen/defaultSpacing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,8 +114,8 @@
             android:textSize="@dimen/optionTextSize"
             android:textStyle="bold"/>
         <CheckBox
-            android:id="@+id/cb"
-            android:layout_below="@id/ca"
+            android:id="@+id/cb_b"
+            android:layout_below="@id/cb_a"
             android:layout_marginLeft="@dimen/defeultSpacing2x"
             android:layout_marginTop="@dimen/defaultSpacing"
             android:layout_width="wrap_content"
@@ -107,8 +124,8 @@
             android:textSize="@dimen/optionTextSize"
             android:textStyle="bold"/>
         <CheckBox
-            android:id="@+id/cc"
-            android:layout_below="@id/cb"
+            android:id="@+id/cb_c"
+            android:layout_below="@id/cb_b"
             android:layout_marginLeft="@dimen/defeultSpacing2x"
             android:layout_marginTop="@dimen/defaultSpacing"
             android:layout_width="wrap_content"

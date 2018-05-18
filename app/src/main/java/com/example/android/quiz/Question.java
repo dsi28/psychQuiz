@@ -8,50 +8,62 @@ public class Question {
     private String option3;
     private String questionText;
     private double numRight;
-    private int questionType; //1 multiple choice, 2 checkbox
+    private int questionType; //1 multiple choice, 2 checkbox, 3 for editText
     public int checked[] = {0, 0, 0};
-    public HashMap<Integer, Character> ansKey = new HashMap<>();
+    public HashMap<Integer, String> ansKey = new HashMap<>();
     public HashMap<Integer, Integer> score = new HashMap<>(); // 1 for correct, 0 for incorrect.
     public Question() {
         setAnsKey();
     }
     private void setAnsKey() {
-        ansKey.put(1, 'b');
-        ansKey.put(2, 'a');
-        ansKey.put(3, '7');//checkboxes: 1 is only c1 is selected, 2 is only c2 is selected,  3 is only c3 is selected,  4 is only c1,c2 is selected, 5 is only c1,c3 is selected, 6 is only c2,c3 is selected, 7 is only c1,c2,c3 is selected,
-        ansKey.put(4, 'a');
-        ansKey.put(5, 'c');
-        ansKey.put(6, 'c');
-        ansKey.put(7, 'b');
+        ansKey.put(1, "blueberry");
+        ansKey.put(2, "a");
+        ansKey.put(3, "7");//checkboxes: 1 is only c1 is selected, 2 is only c2 is selected,  3 is only c3 is selected,  4 is only c1,c2 is selected, 5 is only c1,c3 is selected, 6 is only c2,c3 is selected, 7 is only c1,c2,c3 is selected,
+        ansKey.put(4, "a");
+        ansKey.put(5, "c");
+        ansKey.put(6, "c");
+        ansKey.put(7, "b");
     }
     public void reviewCheckBoxChoice(int currentNumber) {
-        char ans = ' ';
+        String ans = "";
         if (checked[0] == 1 && checked[1] == 0 && checked[2] == 0) {
-            ans = '1';
+            ans = "1";
         } else if (checked[0] == 0 && checked[1] == 1 && checked[2] == 0) {
-            ans = '2';
+            ans = "2";
         } else if (checked[0] == 0 && checked[1] == 0 && checked[2] == 1) {
-            ans = '3';
+            ans = "3";
         } else if (checked[0] == 1 && checked[1] == 1 && checked[2] == 0) {
-            ans = '4';
+            ans = "4";
         } else if (checked[0] == 1 && checked[1] == 0 && checked[2] == 1) {
-            ans = '5';
+            ans = "5";
         } else if (checked[0] == 0 && checked[1] == 1 && checked[2] == 1) {
-            ans = '6';
+            ans = "6";
         } else if (checked[0] == 1 && checked[1] == 1 && checked[2] == 1) {
-            ans = '7';
+            ans = "7";
         } else {
-            ans = '0';
+            ans = "0";
         }
-        if (ansKey.get(currentNumber) == ans) {
+        if (ansKey.get(currentNumber).equals(ans)) {
             score.put(currentNumber, 1);
         } else {
             score.put(currentNumber, 0);
         }
     }
+
+    public void reviewEditTextChoice(String choice, int currentNumber){
+        if(choice.equals("")){
+
+        }else {
+            if(choice.equalsIgnoreCase(ansKey.get(currentNumber))){
+                score.put(currentNumber, 1);
+            }else {
+                score.put(currentNumber, 0);
+            }
+        }
+    }
     public void checkChoice(int currentQuestionNumber) {
         num = currentQuestionNumber;
-        if (optionPicked.equals(ansKey.get(num).toString())) {
+        if (optionPicked.equals(ansKey.get(num))) {
             score.put(num, 1);
         } else {
             score.put(num, 0);
@@ -89,12 +101,6 @@ public class Question {
     }
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
-    }
-    public int getNum() {
-        return num;
-    }
-    public String getOptionPicked() {
-        return optionPicked;
     }
     public void setOptionPicked(String optionPicked) {
         this.optionPicked = optionPicked;

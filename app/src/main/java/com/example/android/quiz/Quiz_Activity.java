@@ -5,35 +5,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Quiz_Activity extends AppCompatActivity {
     public final int numQuestions = 7;
     public int curQuestion = 1;
     Question quiz = new Question();
-    TextView currentNumber;
-    TextView currentQuestion;
-    RadioButton currentA;
-    RadioButton currentB;
-    RadioButton currentC;
-    RadioGroup answerChoices;
-    Button btnSubmit;
-    CheckBox c1;
-    CheckBox c2;
-    CheckBox c3;
     private void isCheckedBox() {
-        if (c1.isChecked()) {
+        if (cb1.isChecked()) {
             quiz.checked[0] = 1;
         }
-        if (c2.isChecked()) {
+        if (cb2.isChecked()) {
             quiz.checked[1] = 1;
         }
-        if (c3.isChecked()) {
+        if (cb3.isChecked()) {
             quiz.checked[2] = 1;
         }
     }
+
+
     private void submitChoice() {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,19 +37,31 @@ public class Quiz_Activity extends AppCompatActivity {
                 switch (quiz.getQuestionType()) {
                     case 1:
                         if (answerChoices.getCheckedRadioButtonId() != -1) {
-                            if (currentA.isChecked()) {
+                            if (rbA.isChecked()) {
                                 quiz.setOptionPicked("a");
-                            } else if (currentB.isChecked()) {
+                            } else if (rbB.isChecked()) {
                                 quiz.setOptionPicked("b");
-                            } else if (currentC.isChecked()) {
+                            } else if (rbC.isChecked()) {
                                 quiz.setOptionPicked("c");
                             }
                             quiz.checkChoice(curQuestion);
+                        }else{
+                            curQuestion--;
+                            questionSelection();
                         }
                         break;
                     case 2:
                         isCheckedBox();
                         quiz.reviewCheckBoxChoice(curQuestion);
+                        break;
+                    case 3:
+                        String answerEditText= optionEditText.getText().toString();
+                        if(answerEditText.equals("")){
+                            curQuestion--;
+                            questionSelection();
+                        }else{
+                            quiz.reviewEditTextChoice(answerEditText, curQuestion);
+                        }
                         break;
                 }
                 curQuestion++;
@@ -70,32 +78,55 @@ public class Quiz_Activity extends AppCompatActivity {
             }
         });
     }
+
+    private void showMuitipleChoiceOptions(){
+        optionEditText.setVisibility(View.INVISIBLE);
+        cb1.setVisibility(View.INVISIBLE);
+        cb2.setVisibility(View.INVISIBLE);
+        cb3.setVisibility(View.INVISIBLE);
+        rbA.setVisibility(View.VISIBLE);
+        rbB.setVisibility(View.VISIBLE);
+        rbC.setVisibility(View.VISIBLE);
+        rbA.setText(quiz.getOption1());
+        rbB.setText(quiz.getOption2());
+        rbC.setText(quiz.getOption3());
+    }
+
+    private void showCheckBoxOptions(){
+        optionEditText.setVisibility(View.INVISIBLE);
+        rbA.setVisibility(View.INVISIBLE);
+        rbB.setVisibility(View.INVISIBLE);
+        rbC.setVisibility(View.INVISIBLE);
+        cb1.setVisibility(View.VISIBLE);
+        cb2.setVisibility(View.VISIBLE);
+        cb3.setVisibility(View.VISIBLE);
+        cb1.setText(quiz.getOption1());
+        cb2.setText(quiz.getOption2());
+        cb3.setText(quiz.getOption3());
+    }
+
+    private void showEditTextOptions(){
+        cb1.setVisibility(View.INVISIBLE);
+        cb2.setVisibility(View.INVISIBLE);
+        cb3.setVisibility(View.INVISIBLE);
+        rbA.setVisibility(View.INVISIBLE);
+        rbB.setVisibility(View.INVISIBLE);
+        rbC.setVisibility(View.INVISIBLE);
+        optionEditText.setVisibility(View.VISIBLE);
+    }
+
     private void fillScreenTextInfo() {
         currentNumber.setText(curQuestion + "");
         currentQuestion.setText(quiz.getQuestionText());
         switch (quiz.getQuestionType()) {
             case 1:
-                c1.setVisibility(View.INVISIBLE);
-                c2.setVisibility(View.INVISIBLE);
-                c3.setVisibility(View.INVISIBLE);
-                currentA.setVisibility(View.VISIBLE);
-                currentB.setVisibility(View.VISIBLE);
-                currentC.setVisibility(View.VISIBLE);
-                currentA.setText(quiz.getOption1());
-                currentB.setText(quiz.getOption2());
-                currentC.setText(quiz.getOption3());
+                showMuitipleChoiceOptions();
                 break;
             case 2:
-                currentA.setVisibility(View.INVISIBLE);
-                currentB.setVisibility(View.INVISIBLE);
-                currentC.setVisibility(View.INVISIBLE);
-                c1.setVisibility(View.VISIBLE);
-                c2.setVisibility(View.VISIBLE);
-                c3.setVisibility(View.VISIBLE);
-                c1.setText(quiz.getOption1());
-                c2.setText(quiz.getOption2());
-                c3.setText(quiz.getOption3());
+                showCheckBoxOptions();
                 break;
+            case 3:
+                showEditTextOptions();
             default:
                 break;
         }
@@ -104,10 +135,8 @@ public class Quiz_Activity extends AppCompatActivity {
         quiz.setQuestionType(1);
         switch (curQuestion) {
             case 1:
+                quiz.setQuestionType(3);
                 quiz.setQuestionText(getString(R.string.q1));
-                quiz.setOption1(getString(R.string.q1o1));
-                quiz.setOption2(getString(R.string.q1o2));
-                quiz.setOption3(getString(R.string.q1o3));
                 break;
             case 2:
                 quiz.setQuestionText(getString(R.string.q2));
@@ -152,20 +181,23 @@ public class Quiz_Activity extends AppCompatActivity {
         fillScreenTextInfo();
         submitChoice();
     }
+    @BindView(R.id.questionText) TextView currentQuestion;
+    @BindView(R.id.curNum) TextView currentNumber;
+    @BindView(R.id.rb_a) RadioButton rbA;
+    @BindView(R.id.rb_b) RadioButton rbB;
+    @BindView(R.id.rb_c) RadioButton rbC;
+    @BindView(R.id.radio) RadioGroup answerChoices;
+    @BindView(R.id.cb_a) CheckBox cb1;
+    @BindView(R.id.cb_b) CheckBox cb2;
+    @BindView(R.id.cb_c) CheckBox cb3;
+    @BindView(R.id.editTextBoxOption) EditText optionEditText;
+    @BindView(R.id.btnSubmit) Button btnSubmit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        currentQuestion = (TextView) findViewById(R.id.questionText);
-        currentNumber = (TextView) findViewById(R.id.curNum);
-        currentA = (RadioButton) findViewById(R.id.a);
-        currentB = (RadioButton) findViewById(R.id.b);
-        currentC = (RadioButton) findViewById(R.id.c);
-        answerChoices = (RadioGroup) findViewById(R.id.radio);
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        c1 = (CheckBox) findViewById(R.id.ca);
-        c2 = (CheckBox) findViewById(R.id.cb);
-        c3 = (CheckBox) findViewById(R.id.cc);
+        ButterKnife.bind(this);
         questionSelection();
     }
 }
